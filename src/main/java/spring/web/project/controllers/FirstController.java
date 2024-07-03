@@ -15,4 +15,9 @@ public class FirstController {
     public String goodByePage() {
         return "first/goodbye";
     }
+
+    @GetMapping("/exit")
+    public String exitPage(){
+        return "first/exit";
+    }
 }
