@@ -54,7 +54,10 @@
 </head>
 <body>
 <div class="passport-container">
-    <div class="passport-photo" th:style="'background-image: url(' + ${person.getPhoto()} + ')'"></div>
+    <div class="passport-photo">
+        <img th:src="@{${person.getPhoto()}}" alt="Passport Photo">
+    </div>
+
     <div class="passport-info">
         <p><span>ID:</span> <span th:text="${person.getId()}">123456</span></p>
         <p><span>Name:</span> <span th:text="${person.getName()}">John</span></p>

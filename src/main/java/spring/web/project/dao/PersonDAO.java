@@ -14,7 +14,6 @@ public class PersonDAO {
 
     public int addPeople(String name, String surname, String email, String photo){
         people.add(new Person(++COUNT, name, surname, email, photo));
-        System.out.println(COUNT);
         return COUNT;
     }
 
@@ -23,7 +22,6 @@ public class PersonDAO {
     }
 
     public Person one(int id){
-        System.out.println(id + " " + people.get(id).getName());
         return people.get(id);
     }
 }

@@ -12,6 +12,7 @@ import spring.web.project.dao.PersonDAO;
 import spring.web.project.models.Person;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.util.List;
 
 @Controller
@@ -50,7 +51,6 @@ public class PeopleController {
         String photo = request.getParameter("photo");
 
         int id = dao.addPeople(name, surname, email, photo);
-        System.out.println(name);
 
         model.addAttribute("person", dao.one(id));
         return "people/one";

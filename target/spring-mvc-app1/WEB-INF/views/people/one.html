@@ -2,10 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Person</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #eceff1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .passport-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .passport-photo {
+            width: 150px;
+            height: 150px;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .passport-info {
+            width: 100%;
+        }
+
+        .passport-info p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .passport-info p span {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<p th:text="${person.getName()}">value</p>
-<p th:text="${person.getId()}">value</p>
+<div class="passport-container">
+    <img src="C:\Users\bunko\IdeaProjects\SpringWebProject\src\main\java\spring\web\project\models\bober.jpeg" alt="Passport Photo">
+
+    <div class="passport-info">
+        <p><span>ID:</span> <span th:text="${person.getId()}">123456</span></p>
+        <p><span>Name:</span> <span th:text="${person.getName()}">John</span></p>
+        <p><span>Surname:</span> <span th:text="${person.getSurname()}">Doe</span></p>
+        <p><span>Email:</span> <span th:text="${person.getEmail()}">john.doe@example.com</span></p>
+    </div>
+</div>
 </body>
 </html>
