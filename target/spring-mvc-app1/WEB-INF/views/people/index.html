@@ -3,11 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>People</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #eceff1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .person-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-direction: column; /* Відображення блоків по вертикалі */
+        }
+
+        .person-photo {
+            width: 100px;
+            height: 100px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin-bottom: 10px; /* Відстань між фото та деталями */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .person-details {
+            text-align: center;
+        }
+
+        .person-details p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 
-<div th:each="person : ${people}">
-  <a th:text="${person.getName()}" th:href="@{/people/{id}(id=${person.getId()})}">user</a>
+<div th:each="person : ${people}" class="person-container">
+    <div class="person-photo" th:style="'background-image: url(' + ${person.getPhoto()} + ')'"></div>
+    <div class="person-details">
+        <p><strong>Name:</strong> <span th:text="${person.getName()}">John Doe</span></p>
+        <p><strong>Surname:</strong> <span th:text="${person.getSurname()}">Doe</span></p>
+        <p><strong>Email:</strong> <span th:text="${person.getEmail()}">john.doe@example.com</span></p>
+        <!-- Додаткові деталі за необхідності -->
+        <a th:href="@{/people/{id}(id=${person.getId()})}">Details</a>
+    </div>
 </div>
 
 </body>

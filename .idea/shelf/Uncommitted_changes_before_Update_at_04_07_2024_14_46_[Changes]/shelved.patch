@@ -1,0 +1,132 @@
+Index: src/main/java/spring/web/project/config/SpringConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package spring.web.project.config;\r\n\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.context.ApplicationContext;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.ComponentScan;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.web.servlet.config.annotation.EnableWebMvc;\r\nimport org.springframework.web.servlet.config.annotation.ViewResolverRegistry;\r\nimport org.springframework.web.servlet.config.annotation.WebMvcConfigurer;\r\nimport org.thymeleaf.spring5.SpringTemplateEngine;\r\nimport org.thymeleaf.spring5.view.ThymeleafViewResolver;\r\nimport org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;\r\n\r\n@Configuration\r\n@ComponentScan(\"spring.web.project\")\r\n@EnableWebMvc\r\npublic class SpringConfig implements WebMvcConfigurer {\r\n\r\n    private final ApplicationContext applicationContext;\r\n\r\n    @Autowired\r\n    public SpringConfig(ApplicationContext applicationContext) {\r\n        this.applicationContext = applicationContext;\r\n    }\r\n\r\n    @Bean\r\n    public SpringResourceTemplateResolver templateResolver() {\r\n        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();\r\n        templateResolver.setApplicationContext(applicationContext);\r\n        templateResolver.setPrefix(\"/WEB-INF/views/\");\r\n        templateResolver.setSuffix(\".html\");\r\n        return templateResolver;\r\n    }\r\n\r\n    @Bean\r\n    public SpringTemplateEngine templateEngine() {\r\n        SpringTemplateEngine templateEngine = new SpringTemplateEngine();\r\n        templateEngine.setTemplateResolver(templateResolver());\r\n        templateEngine.setEnableSpringELCompiler(true);\r\n        return templateEngine;\r\n    }\r\n\r\n    @Override\r\n    public void configureViewResolvers(ViewResolverRegistry registry) {\r\n        ThymeleafViewResolver resolver = new ThymeleafViewResolver();\r\n        resolver.setTemplateEngine(templateEngine());\r\n        registry.viewResolver(resolver);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/spring/web/project/config/SpringConfig.java b/src/main/java/spring/web/project/config/SpringConfig.java
+--- a/src/main/java/spring/web/project/config/SpringConfig.java	(revision 5a049e0288b4776c141f39cc1a3c0044cce105ce)
++++ b/src/main/java/spring/web/project/config/SpringConfig.java	(date 1719993426877)
+@@ -8,9 +8,9 @@
+ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+-import org.thymeleaf.spring5.SpringTemplateEngine;
+-import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+-import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
++import org.thymeleaf.spring6.SpringTemplateEngine;
++import org.thymeleaf.spring6.view.ThymeleafViewResolver;
++import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
+ 
+ @Configuration
+ @ComponentScan("spring.web.project")
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n  xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd\">\r\n  <modelVersion>4.0.0</modelVersion>\r\n  <groupId>spring.web.project</groupId>\r\n  <artifactId>spring-web-project</artifactId>\r\n  <packaging>war</packaging>\r\n  <version>1.0-SNAPSHOT</version>\r\n  <name>spring-web-project Maven Webapp</name>\r\n  <url>http://maven.apache.org</url>\r\n  <properties>\r\n    <spring.version>5.3.37</spring.version>\r\n  </properties>\r\n  <dependencies>\r\n    <dependency>\r\n      <groupId>junit</groupId>\r\n      <artifactId>junit</artifactId>\r\n      <version>3.8.1</version>\r\n      <scope>test</scope>\r\n    </dependency>\r\n\r\n    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->\r\n    <dependency>\r\n      <groupId>org.springframework</groupId>\r\n      <artifactId>spring-context</artifactId>\r\n      <version>${spring.version}</version>\r\n    </dependency>\r\n\r\n    <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->\r\n    <dependency>\r\n      <groupId>org.springframework</groupId>\r\n      <artifactId>spring-web</artifactId>\r\n      <version>${spring.version}</version>\r\n    </dependency>\r\n\r\n    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->\r\n    <dependency>\r\n      <groupId>org.springframework</groupId>\r\n      <artifactId>spring-core</artifactId>\r\n      <version>${spring.version}</version>\r\n    </dependency>\r\n\r\n    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->\r\n    <dependency>\r\n      <groupId>org.springframework</groupId>\r\n      <artifactId>spring-webmvc</artifactId>\r\n      <version>${spring.version}</version>\r\n    </dependency>\r\n\r\n    <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring6 -->\r\n    <dependency>\r\n      <groupId>org.thymeleaf</groupId>\r\n      <artifactId>thymeleaf-spring5</artifactId>\r\n      <version>3.1.2.RELEASE</version>\r\n    </dependency>\r\n\r\n\r\n    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->\r\n    <dependency>\r\n      <groupId>javax.servlet</groupId>\r\n      <artifactId>javax.servlet-api</artifactId>\r\n      <version>4.0.1</version>\r\n      <scope>provided</scope>\r\n    </dependency>\r\n\r\n  </dependencies>\r\n  <build>\r\n    <finalName>spring-web-project</finalName>\r\n  </build>\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision 5a049e0288b4776c141f39cc1a3c0044cce105ce)
++++ b/pom.xml	(date 1719993532875)
+@@ -8,7 +8,8 @@
+   <name>spring-web-project Maven Webapp</name>
+   <url>http://maven.apache.org</url>
+   <properties>
+-    <spring.version>5.3.37</spring.version>
++    <!-- <spring.version>5.3.37</spring.version> -->
++    <spring.version>6.1.0</spring.version>
+   </properties>
+   <dependencies>
+     <dependency>
+@@ -49,19 +50,28 @@
+     <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring6 -->
+     <dependency>
+       <groupId>org.thymeleaf</groupId>
+-      <artifactId>thymeleaf-spring5</artifactId>
++      <artifactId>thymeleaf-spring6</artifactId>
+       <version>3.1.2.RELEASE</version>
+     </dependency>
+ 
+ 
+     <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+-    <dependency>
++    <!--<dependency>
+       <groupId>javax.servlet</groupId>
+       <artifactId>javax.servlet-api</artifactId>
+       <version>4.0.1</version>
++      <scope>provided</scope>
++    </dependency>-->
++
++    <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
++    <dependency>
++      <groupId>jakarta.servlet</groupId>
++      <artifactId>jakarta.servlet-api</artifactId>
++      <version>${spring.version}</version>
+       <scope>provided</scope>
+     </dependency>
+ 
++
+   </dependencies>
+   <build>
+     <finalName>spring-web-project</finalName>
+Index: .idea/SpringWebProject.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/SpringWebProject.iml b/.idea/SpringWebProject.iml
+new file mode 100644
+--- /dev/null	(date 1719993235702)
++++ b/.idea/SpringWebProject.iml	(date 1719993235702)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_18\" default=\"true\" project-jdk-name=\"18\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 5a049e0288b4776c141f39cc1a3c0044cce105ce)
++++ b/.idea/misc.xml	(date 1719993389054)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: target/spring-web-project/META-INF/MANIFEST.MF
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Manifest-Version: 1.0\r\nCreated-By: IntelliJ IDEA\r\nBuilt-By: nazar\r\nBuild-Jdk: Oracle OpenJDK version 18.0.2\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/spring-web-project/META-INF/MANIFEST.MF b/target/spring-web-project/META-INF/MANIFEST.MF
+--- a/target/spring-web-project/META-INF/MANIFEST.MF	(revision 5a049e0288b4776c141f39cc1a3c0044cce105ce)
++++ b/target/spring-web-project/META-INF/MANIFEST.MF	(date 1719993702766)
+@@ -1,5 +1,5 @@
+ Manifest-Version: 1.0
+ Created-By: IntelliJ IDEA
+-Built-By: nazar
+-Build-Jdk: Oracle OpenJDK version 18.0.2
++Built-By: Admin
++Build-Jdk: Oracle OpenJDK version 21
+ 

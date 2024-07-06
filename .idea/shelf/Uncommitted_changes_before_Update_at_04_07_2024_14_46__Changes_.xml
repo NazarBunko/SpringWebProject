@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_04_07_2024_14_46_[Changes]" date="1720093622820" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_07_2024_14_46_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 04.07.2024 14:46 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/spring-web-project.war" />
+    <option name="AFTER_PATH" value="target/spring-web-project.war" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_07_2024_14_46_[Changes]/spring-web-project.war" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/spring-web-project/WEB-INF/classes/spring/web/project/config/SpringConfig.class" />
+    <option name="AFTER_PATH" value="target/spring-web-project/WEB-INF/classes/spring/web/project/config/SpringConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_07_2024_14_46_[Changes]/SpringConfig.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/spring/web/project/config/SpringConfig.class" />
+    <option name="AFTER_PATH" value="target/classes/spring/web/project/config/SpringConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_07_2024_14_46_[Changes]/SpringConfig1.class" />
+  </binary>
+</changelist>
