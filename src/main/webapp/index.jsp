@@ -1,5 +1,7 @@
 <html>
 <body>
-<a href="/people">Hello!</a>
+<a href="/people">People</a>
+
+<a href="/hello">Hello!</a>
 </body>
 </html>
