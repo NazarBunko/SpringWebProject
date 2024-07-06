@@ -9,20 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9705f122-f9be-4274-9cf4-ddeec39e77cf" name="Changes" comment="passport">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/models/bober.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/one.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/one.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/PeopleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/dao/PersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/dao/PersonDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/models/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/one.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/one.html" afterDir="false" />
-    </list>
+    <list default="true" id="9705f122-f9be-4274-9cf4-ddeec39e77cf" name="Changes" comment="noPhoto" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,7 +206,7 @@
       <updated>1719993232584</updated>
       <workItem from="1719993233542" duration="498000" />
       <workItem from="1720093556376" duration="2149000" />
-      <workItem from="1720267067727" duration="10361000" />
+      <workItem from="1720267067727" duration="10948000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <option name="closed" value="true" />
@@ -237,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720274431488</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="noPhoto">
+      <option name="closed" value="true" />
+      <created>1720278473870</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720278473870</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +242,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="all" />
     <MESSAGE value="passport" />
-    <option name="LAST_COMMIT_MESSAGE" value="passport" />
+    <MESSAGE value="noPhoto" />
+    <option name="LAST_COMMIT_MESSAGE" value="noPhoto" />
   </component>
 </project>

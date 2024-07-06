@@ -54,7 +54,9 @@
 </head>
 <body>
 <div class="passport-container">
-    <img src="C:\Users\bunko\IdeaProjects\SpringWebProject\src\main\java\spring\web\project\models\bober.jpeg" alt="Passport Photo">
+    <div class="passport-photo">
+        <img th:src="@{${person.getPhoto()}}" alt="Passport Photo">
+    </div>
 
     <div class="passport-info">
         <p><span>ID:</span> <span th:text="${person.getId()}">123456</span></p>
