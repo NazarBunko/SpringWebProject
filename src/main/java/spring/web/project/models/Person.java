@@ -1,6 +1,8 @@
 package spring.web.project.models;
 
 import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Person {
     private int id;
@@ -55,5 +57,21 @@ public class Person {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public static String decodeHtmlEntities(String input) {
+        Pattern pattern = Pattern.compile("&#(\\d+);");
+        Matcher matcher = pattern.matcher(input);
+        StringBuffer decodedString = new StringBuffer();
+
+        while (matcher.find()) {
+            String charCode = matcher.group(1);
+            int codePoint = Integer.parseInt(charCode);
+            String character = new String(Character.toChars(codePoint));
+            matcher.appendReplacement(decodedString, character);
+        }
+        matcher.appendTail(decodedString);
+
+        return decodedString.toString();
     }
 }
