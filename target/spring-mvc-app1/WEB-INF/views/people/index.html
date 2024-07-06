@@ -12,6 +12,22 @@
             margin: 0;
             background-color: #eceff1;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative; /* Added for positioning the add button */
+        }
+
+        .scrollable-container {
+            max-height: 90vh; /* Adjust as needed */
+            overflow-y: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .list-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
 
         .person-container {
@@ -24,7 +40,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
-            flex-direction: column; /* Відображення блоків по вертикалі */
+            box-sizing: border-box;
         }
 
         .person-photo {
@@ -32,13 +48,14 @@
             height: 100px;
             background-color: #ddd;
             border-radius: 50%;
-            margin-bottom: 10px; /* Відстань між фото та деталями */
+            margin-right: 20px;
+            flex-shrink: 0;
             background-size: cover;
             background-position: center;
         }
 
         .person-details {
-            text-align: center;
+            flex-grow: 1;
         }
 
         .person-details p {
@@ -46,18 +63,47 @@
             font-size: 16px;
             color: #333;
         }
+
+        .add-button {
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 28px; /* Increased font size for better visibility */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-50%); /* Center vertically */
+        }
+
+        .no-people-message {
+            font-size: 18px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
 
-<div th:each="person : ${people}" class="person-container">
-    <div class="person-photo" th:style="'background-image: url(' + ${person.getPhoto()} + ')'"></div>
-    <div class="person-details">
-        <p><strong>Name:</strong> <span th:text="${person.getName()}">John Doe</span></p>
-        <p><strong>Surname:</strong> <span th:text="${person.getSurname()}">Doe</span></p>
-        <p><strong>Email:</strong> <span th:text="${person.getEmail()}">john.doe@example.com</span></p>
-        <!-- Додаткові деталі за необхідності -->
-        <a th:href="@{/people/{id}(id=${person.getId()})}">Details</a>
+<a href="/people/new" class="add-button">+</a>
+
+<div class="scrollable-container">
+    <div class="list-wrapper">
+        <div th:each="person : ${people}" class="person-container">
+            <div class="person-photo" th:style="'background-image: url(' + ${person.getPhoto()} + ')'"></div>
+            <div class="person-details">
+                <p><strong>Name:</strong> <span th:text="${person.getName()}">John Doe</span></p>
+                <p><strong>Surname:</strong> <span th:text="${person.getSurname()}">Doe</span></p>
+                <p><strong>Email:</strong> <span th:text="${person.getEmail()}">john.doe@example.com</span></p>
+                <!-- Add more details as needed -->
+                <a th:href="@{/people/{id}(id=${person.getId()})}">Details</a>
+            </div>
+        </div>
     </div>
 </div>
 

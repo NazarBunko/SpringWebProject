@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Person</title>
+    <title>Menu</title>
     <style>
         body {
             display: flex;
@@ -11,31 +10,23 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #eceff1;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            font-family: Helvetica, Arial, sans-serif; /* Змінено шрифт на Helvetica */
         }
 
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
+        .centered-button {
+            padding: 10px 20px;
+            font-size: 18px;
             background-color: #007bff;
+            color: white;
             border: none;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
+            text-decoration: none; /* Додано видалення підкреслення для посилання */
         }
     </style>
 </head>
 <body>
-<a href="/people/new" class="button">Add New Person</a>
+<a class="centered-button" href="/people">List of Users</a>
 </body>
 </html>

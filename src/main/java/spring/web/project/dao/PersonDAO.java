@@ -3,7 +3,6 @@ package spring.web.project.dao;
 import org.springframework.stereotype.Component;
 import spring.web.project.models.Person;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
