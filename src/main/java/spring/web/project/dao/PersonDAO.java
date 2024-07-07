@@ -19,7 +19,17 @@ public class PersonDAO {
         return people;
     }
 
-    public Person one(int id){
-        return people.get(id);
+    public Person one(String email){
+        for (Person person : people) {
+            if (person.getEmail().equals(email)) {
+                return person;
+            }
+        }
+        return null;
     }
+
+    public void delete(String email) {
+        people.removeIf(person -> person.getEmail().equals(email));
+    }
+
 }

@@ -122,7 +122,7 @@
                 <p><strong>Surname:</strong> <span th:text="${person.decodeHtmlEntities(person.getSurname())}">Doe</span></p>
                 <p><strong>Email:</strong> <span th:text="${person.decodeHtmlEntities(person.getEmail())}">john.doe@example.com</span></p>
                 <!-- Add more details as needed -->
-                <a th:href="@{/people/{id}(id=${person.getId()})}">Details</a>
+                <a th:href="@{/people/person(email=${person.getEmail()})}">Details</a>
             </div>
             <button class="delete-button" th:onclick="'deletePerson(' + ${person.getId()} + ')'">
                 <i class="fas fa-trash-alt"></i>

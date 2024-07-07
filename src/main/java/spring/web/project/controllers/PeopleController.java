@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import spring.web.project.dao.PersonDAO;
 import spring.web.project.models.Person;
 
@@ -16,17 +16,23 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/people")
 public class PeopleController {
 
-    private final PersonDAO dao;
+    private final PersonDAO dao = new PersonDAO();
 
-    @Autowired
-    public PeopleController(PersonDAO dao) {
-        this.dao = dao;
+    @GetMapping("/person")
+    public String one(@RequestParam("email") String email, Model model){
+        if(dao.one(email) == null){
+            model.addAttribute("people", dao.index());
+            return "/people/index";
+        }
+        model.addAttribute("person", dao.one(email));
+        return "people/one";
     }
 
-    @GetMapping("/{id}")
-    public String one(@PathVariable("id") int id, Model model){
-        model.addAttribute("person", dao.one(id));
-        return "people/one";
+    @GetMapping("/delete")
+    public String delete(@RequestParam("email") String email, Model model){
+        dao.delete(email);
+        model.addAttribute("people", dao.index());
+        return "people/index";
     }
 
     @GetMapping("")
