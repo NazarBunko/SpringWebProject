@@ -3,10 +3,8 @@ package spring.web.project.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import spring.web.project.dao.PersonDAO;
 import spring.web.project.models.Person;
 
@@ -19,20 +17,13 @@ public class PeopleController {
     private final PersonDAO dao = new PersonDAO();
 
     @GetMapping("/person")
-    public String one(@RequestParam("email") String email, Model model){
-        if(dao.one(email) == null){
+    public String one(@RequestParam("id") int id, Model model){
+        if(dao.one(id) == null){
             model.addAttribute("people", dao.index());
             return "/people/index";
         }
-        model.addAttribute("person", dao.one(email));
+        model.addAttribute("person", dao.one(id));
         return "people/one";
-    }
-
-    @GetMapping("/delete")
-    public String delete(@RequestParam("email") String email, Model model){
-        dao.delete(email);
-        model.addAttribute("people", dao.index());
-        return "people/index";
     }
 
     @GetMapping("")
@@ -46,20 +37,32 @@ public class PeopleController {
         return "people/new";
     }
 
-    @PostMapping("")
-    public String newPerson(Model model, HttpServletRequest request){
-        System.setProperty("file.encoding", "UTF-8");
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
-        String email = request.getParameter("email");
-        String photo = request.getParameter("photo");
-        photo = "https://kartinki.pics/pics/uploads/posts/2022-09/thumbs/1662405711_5-kartinkin-net-p-ikonka-cheloveka-minimalizm-vkontakte-5.png";
-        name = Person.decodeHtmlEntities(name);
-        surname = Person.decodeHtmlEntities(surname);
-        email = Person.decodeHtmlEntities(email);
+    @GetMapping("/{id}/edit")
+    public String editPerson(@PathVariable("id") int id, Model model) {
+        model.addAttribute("person", dao.one(id));
+        return "people/edit";
+    }
 
-        dao.addPerson(name, surname, email, photo);
+    @PatchMapping("/{id}/edit")
+    public String updatePerson(@ModelAttribute("person.getPerson()") Person updatedPerson, @PathVariable("id") int id) {
+        dao.update(id, updatedPerson);
+        return "redirect:/people";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") int id, Model model){
+        System.out.println("hello");
+        dao.delete(id);
         model.addAttribute("people", dao.index());
         return "/people/index";
+    }
+
+    @PostMapping("")
+    public String newPerson(Model model, HttpServletRequest request){
+        Person person = new Person(0, request.getParameter("name"), request.getParameter("surname"), request.getParameter("email"), "");
+        person.setPhoto("https://kartinki.pics/pics/uploads/posts/2022-09/thumbs/1662405711_5-kartinkin-net-p-ikonka-cheloveka-minimalizm-vkontakte-5.png");
+        dao.add(person);
+        model.addAttribute("people", dao.index());
+        return "redirect:/people";
     }
 }

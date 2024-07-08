@@ -9,27 +9,38 @@ import java.util.List;
 @Component
 public class PersonDAO {
     private List<Person> people = new ArrayList<>();
-    private static int COUNT = -1;
+    private static int COUNT = 0;
 
-    public void addPerson(String name, String surname, String email, String photo){
-        people.add(new Person(++COUNT, name, surname, email, photo));
+    public void add(Person person) {
+        person.setId(COUNT++);
+        people.add(person);
     }
 
-    public List<Person> index(){
+    public List<Person> index() {
         return people;
     }
 
-    public Person one(String email){
+    public Person one(int id) {
         for (Person person : people) {
-            if (person.getEmail().equals(email)) {
+            if (person.getId() == id) {
                 return person;
             }
         }
         return null;
     }
 
-    public void delete(String email) {
-        people.removeIf(person -> person.getEmail().equals(email));
+    public void delete(int id) {
+        people.removeIf(person -> person.getId() == id);
     }
 
+    public void update(int id, Person updatedPerson) {
+        for (Person person : people) {
+            if (person.getId() == id) {
+                person.setName(updatedPerson.getName());
+                person.setSurname(updatedPerson.getSurname());
+                person.setEmail(updatedPerson.getEmail());
+                return;
+            }
+        }
+    }
 }

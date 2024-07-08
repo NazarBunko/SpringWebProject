@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +67,39 @@
         .passport-info p span {
             font-weight: bold;
         }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            margin: 0 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #007bff;
+            font-size: 24px;
+            text-decoration: none; /* Ensure no underline on links */
+            display: flex;
+            align-items: center;
+        }
+
+        .action-button i {
+            margin-right: 5px; /* Adjust icon spacing */
+        }
+
+        .action-button:hover {
+            color: #0056b3;
+        }
+
+        .delete-button {
+            color: #d9534f; /* Red color for delete button */
+        }
     </style>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <a href="/people" class="back-button"></a>
@@ -81,6 +113,15 @@
         <p><span>Name:</span> <span th:text="${person.decodeHtmlEntities(person.getName())}">John</span></p>
         <p><span>Surname:</span> <span th:text="${person.decodeHtmlEntities(person.getSurname())}">Doe</span></p>
         <p><span>Email:</span> <span th:text="${person.decodeHtmlEntities(person.getEmail())}">john.doe@example.com</span></p>
+    </div>
+
+    <div class="action-buttons">
+        <a class="action-button edit-button" th:href="@{/people/{id}/edit(id=${person.getId()})}">
+            <i class="fas fa-edit"></i> Edit
+        </a>
+        <a class="action-button delete-button" th:href="@{/people/delete/{id}(id=${person.getId()})}">
+            <i class="fas fa-trash-alt"></i> Delete
+        </a>
     </div>
 </div>
 </body>

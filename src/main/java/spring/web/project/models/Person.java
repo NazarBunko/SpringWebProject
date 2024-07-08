@@ -58,6 +58,9 @@ public class Person {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+    public Person getPerson(){
+        return new Person(id, name, surname, email, photo);
+    }
 
     public static String decodeHtmlEntities(String input) {
         Pattern pattern = Pattern.compile("&#(\\d+);");

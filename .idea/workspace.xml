@@ -10,14 +10,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9705f122-f9be-4274-9cf4-ddeec39e77cf" name="Changes" comment="+moving&#10;-noPhoto&#10;-noDelete">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/bober.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2024_0_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2024_0_07__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/config/MySpringMVCDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/config/MySpringMVCDispatcherServletInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/PeopleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/models/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/one.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/one.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/config/MySpringMVCDispatcherServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/config/MySpringMVCDispatcherServletInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/config/SpringConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/FirstController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/FirstController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/PeopleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/dao/PersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/dao/PersonDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/models/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/config/MySpringMVCDispatcherServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/config/MySpringMVCDispatcherServletInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/config/SpringConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/FirstController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/FirstController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/models/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/one.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/one.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +65,7 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2ij9gdtwbbCrn2nwsv4w6wZRHMt" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
