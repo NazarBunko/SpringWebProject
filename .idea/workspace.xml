@@ -9,29 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9705f122-f9be-4274-9cf4-ddeec39e77cf" name="Changes" comment="+moving&#10;-noPhoto&#10;-noDelete">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2024_0_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2024_0_07__Changes_.xml" afterDir="false" />
+    <list default="true" id="9705f122-f9be-4274-9cf4-ddeec39e77cf" name="Changes" comment="+delete-photo-edit">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/properties.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/people/image.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/config/MySpringMVCDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/config/MySpringMVCDispatcherServletInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/config/SpringConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/bober.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/one.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/one.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/config/MySpringMVCDispatcherServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/config/MySpringMVCDispatcherServletInitializer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/config/SpringConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/FirstController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/FirstController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/PeopleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/dao/PersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/dao/PersonDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/models/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/config/MySpringMVCDispatcherServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/config/MySpringMVCDispatcherServletInitializer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/config/SpringConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/FirstController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/FirstController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/models/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/one.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/one.html" afterDir="false" />
     </list>
@@ -47,6 +41,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -100,11 +95,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\bunko\IdeaProjects\SpringWebProject\src\main\java\spring\web\project\models" />
-      <recent name="C:\Users\bunko\IdeaProjects\SpringWebProject" />
-      <recent name="C:\Users\bunko\IdeaProjects\SpringWebProject\src\main\webapp\WEB-INF\views\people" />
-      <recent name="C:\Users\bunko\IdeaProjects\SpringWebProject\src\main\webapp" />
-      <recent name="C:\Users\bunko\IdeaProjects\SpringWebProject\photos" />
+      <recent name="C:\Users\nazar\IdeaProjects\SpringWebProject\src\main\resources\static\people" />
+      <recent name="C:\Users\nazar\IdeaProjects\SpringWebProject\src\main\java\spring\web\project\images" />
+      <recent name="C:\Users\nazar\IdeaProjects\SpringWebProject\src\main\webapp\WEB-INF\views\people" />
+      <recent name="C:\Users\nazar\IdeaProjects\SpringWebProject\src\main\webapp\WEB-INF\views\images" />
+      <recent name="C:\Users\nazar\IdeaProjects\SpringWebProject\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -274,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720301955605</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="+delete-photo-edit">
+      <option name="closed" value="true" />
+      <created>1720465408503</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720465408503</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +290,7 @@
     <MESSAGE value="noPhoto" />
     <MESSAGE value="noPhoto&amp;newMainList" />
     <MESSAGE value="+moving&#10;-noPhoto&#10;-noDelete" />
-    <option name="LAST_COMMIT_MESSAGE" value="+moving&#10;-noPhoto&#10;-noDelete" />
+    <MESSAGE value="+delete-photo-edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="+delete-photo-edit" />
   </component>
 </project>

@@ -119,7 +119,7 @@
         <a class="action-button edit-button" th:href="@{/people/{id}/edit(id=${person.getId()})}">
             <i class="fas fa-edit"></i> Edit
         </a>
-        <a class="action-button delete-button" th:href="@{/people/delete/{id}(id=${person.getId()})}">
+        <a class="action-button delete-button" th:href="@{/people/{id}/delete(id=${person.getId()})}">
             <i class="fas fa-trash-alt"></i> Delete
         </a>
     </div>
