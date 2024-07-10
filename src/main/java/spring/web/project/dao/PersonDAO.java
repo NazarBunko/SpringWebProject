@@ -43,4 +43,13 @@ public class PersonDAO {
             }
         }
     }
+
+    public Boolean checkEmail(String email){
+        for (Person person : people) {
+            if (person.getEmail().equals(email)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

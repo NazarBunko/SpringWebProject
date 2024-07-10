@@ -8,6 +8,7 @@ import spring.web.project.dao.PersonDAO;
 import spring.web.project.models.Person;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 
 @Controller
 @PropertySource("classpath:properties.properties")
@@ -22,29 +23,29 @@ public class PeopleController {
             return "redirect:/people";
         }
         model.addAttribute("person", dao.one(id));
-        return "people/one.html";
+        return "people/one";
     }
 
     @GetMapping("")
     public String index(Model model){
         model.addAttribute("people", dao.index());
-        return "/people/index.html";
+        return "/people/index";
     }
 
     @GetMapping("/new")
     public String add(){
-        return "people/new.html";
+        return "people/new";
     }
 
     @GetMapping("/{id}/edit")
     public String editPerson(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", dao.one(id));
-        return "people/edit.html";
+        return "people/edit";
     }
 
     @PatchMapping("/{id}/edit")
     public String updatePerson(@PathVariable("id") int id, Model model, HttpServletRequest request) {
-        dao.update(id, new Person(0, request.getParameter("name"), request.getParameter("surname"), request.getParameter("email"), ""));
+        dao.update(id, new Person(0, request.getParameter("name"), request.getParameter("surname"), request.getParameter("email"), null));
         model.addAttribute("people", dao.index());
         return "redirect:/people";
     }
@@ -57,11 +58,18 @@ public class PeopleController {
     }
 
     @PostMapping("")
-    public String newPerson(Model model, HttpServletRequest request){
-        Person person = new Person(0, request.getParameter("name"), request.getParameter("surname"), request.getParameter("email"), "image.png");
-        person.setPhoto("https://kartinki.pics/pics/uploads/posts/2022-09/thumbs/1662405711_5-kartinkin-net-p-ikonka-cheloveka-minimalizm-vkontakte-5.png");
-        dao.add(person);
-        model.addAttribute("people", dao.index());
-        return "redirect:/people";
+    public String newPerson(Model model, HttpServletRequest request) {
+        String email = request.getParameter("email");
+
+        if (!dao.checkEmail(email)) {
+            model.addAttribute("error", true);
+            return "/people/new";
+        } else {
+            Person person = new Person(0, request.getParameter("name"), request.getParameter("surname"), email, null);
+            person.setPhoto("http://surl.li/tzttyg");
+            dao.add(person);
+            return "redirect:/people";
+        }
     }
+
 }

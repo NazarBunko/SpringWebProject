@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Passport Page</title>
+    <title>User Page</title>
     <style>
         body {
             display: flex;
@@ -105,7 +105,7 @@
 <a href="/people" class="back-button"></a>
 <div class="passport-container">
     <div class="passport-photo">
-        <img th:src="@{${person.getPhoto()}}" alt="Passport Photo" style="width: 150px; height: 150px">
+        <img th:src="${person.getPhoto()}" alt="Passport Photo" style="width: 150px; height: 150px">
     </div>
 
     <div class="passport-info">
