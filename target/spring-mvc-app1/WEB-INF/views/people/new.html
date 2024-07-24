@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Form with File Upload</title>
+    <title>New User</title>
     <style>
         body {
             display: flex;
@@ -13,6 +13,7 @@
             margin: 0;
             background-color: #eceff1;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative; /* Added for positioning the error message */
         }
 
         .form-container {
@@ -75,9 +76,28 @@
             content: '<';
             margin-right: 10px;
         }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px auto 0; /* Centered horizontally with top margin */
+            width: fit-content; /* Adjust width based on content */
+            text-align: center; /* Center text */
+            position: absolute;
+            top: 0; /* Adjust top position */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center horizontally */
+        }
     </style>
 </head>
 <body>
+
+<div class="error-message" th:if="${error}">
+    <p>Email already exists!</p>
+</div>
+
 <a href="/people" class="back-button"></a>
 <div class="form-container">
     <form method="POST" action="/people">

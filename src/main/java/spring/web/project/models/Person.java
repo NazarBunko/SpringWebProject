@@ -19,6 +19,8 @@ public class Person {
         this.photo = photo;
     }
 
+    public Person() {}
+
     public int getId() {
         return id;
     }
@@ -52,12 +54,13 @@ public class Person {
     }
 
     public String getPhoto() {
-        return photo;
+        return "http://surl.li/tzttyg";
     }
 
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+
     public Person getPerson(){
         return new Person(id, name, surname, email, photo);
     }
