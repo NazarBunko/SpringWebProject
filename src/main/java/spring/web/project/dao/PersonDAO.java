@@ -9,8 +9,6 @@ import java.util.List;
 
 @Component
 public class PersonDAO {
-    private static int COUNT;
-
     public static final String URL = "jdbc:postgresql://localhost:5432/people";
     public static final String USER = "postgres";
     public static final String PASSWORD = "12341234";
@@ -33,11 +31,11 @@ public class PersonDAO {
 
     public List<Person> index() {
         List<Person> people = new ArrayList<>();
+        String SQL = "SELECT * FROM person ORDER BY id ASC"; // Ensure sorting by ID
 
-        try {
-            Statement statement = connection.createStatement();
-            String SQL = "SELECT * FROM person";
-            ResultSet resultSet = statement.executeQuery(SQL);
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(SQL)) {
 
             while (resultSet.next()) {
                 Person person = new Person();
@@ -49,11 +47,12 @@ public class PersonDAO {
                 people.add(person);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Error retrieving people from database", e);
         }
 
         return people;
     }
+
 
     public void add(Person person) {
         // SQL to get the current maximum ID
