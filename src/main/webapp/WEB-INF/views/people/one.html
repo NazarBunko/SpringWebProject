@@ -97,10 +97,29 @@
         .delete-button {
             color: #d9534f; /* Red color for delete button */
         }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px auto 0; /* Centered horizontally with top margin */
+            width: fit-content; /* Adjust width based on content */
+            text-align: center; /* Center text */
+            position: absolute;
+            top: 0; /* Adjust top position */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center horizontally */
+        }
     </style>
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
+<div class="error-message" th:if="${error}">
+    <p>Email already exists!</p>
+</div>
+
 <body>
 <a href="/people" class="back-button"></a>
 <div class="passport-container">

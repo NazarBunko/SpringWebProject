@@ -152,11 +152,12 @@ public class PersonDAO {
         }
     }
 
-    public Boolean checkEmail(String email) {
-        String SQL = "SELECT COUNT(*) FROM person WHERE email = ?";
+    public Boolean checkEmail(String email, int id) {
+        String SQL = "SELECT COUNT(*) FROM person WHERE email = ? AND id <> ?";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
             preparedStatement.setString(1, email);
+            preparedStatement.setInt(2, id);
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
@@ -164,11 +165,10 @@ public class PersonDAO {
                     return count == 0;
                 }
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        return true; // Якщо сталася помилка, повертаємо true, щоб не блокувати введення нових email
+        return true;
     }
-
 }
