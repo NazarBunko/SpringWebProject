@@ -45,10 +45,19 @@ public class PeopleController {
 
     @PatchMapping("/{id}/edit")
     public String updatePerson(@PathVariable("id") int id, Model model, HttpServletRequest request) {
-        dao.update(id, new Person(0, request.getParameter("name"), request.getParameter("surname"), request.getParameter("email"), null));
-        model.addAttribute("people", dao.index());
-        return "redirect:/people";
+        String email = request.getParameter("email");
+
+        if (!dao.checkEmail(email, id)) {
+            model.addAttribute("error", true);
+            model.addAttribute("person", dao.one(id));
+            return "/people/one";
+        } else {
+            dao.update(id, new Person(id, request.getParameter("name"), request.getParameter("surname"), email, null));
+            model.addAttribute("person", dao.one(id));
+            return "/people/one";
+        }
     }
+
 
     @GetMapping("/{id}/delete")
     public String delete(@PathVariable("id") int id, Model model){
@@ -61,7 +70,7 @@ public class PeopleController {
     public String newPerson(Model model, HttpServletRequest request) {
         String email = request.getParameter("email");
 
-        if (!dao.checkEmail(email)) {
+        if (!dao.checkEmail(email, 0)) {
             model.addAttribute("error", true);
             return "/people/new";
         } else {

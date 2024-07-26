@@ -2,29 +2,21 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="spring-web-project:war exploded" />
+      <artifact name="spring-forms-validation:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9705f122-f9be-4274-9cf4-ddeec39e77cf" name="Changes" comment="+edit-noPhoto">
-      <change afterPath="$PROJECT_DIR$/images/image.png" afterDir="false" />
+    <list default="true" id="9705f122-f9be-4274-9cf4-ddeec39e77cf" name="Changes" comment="+database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/config/SpringConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/PeopleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/one.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/one.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/config/SpringConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/PeopleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/config/SpringConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/one.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/one.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/properties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/properties.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/properties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/properties.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +30,24 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NazarBunko&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NazarBunko/SpringWebProject.git&quot;,
+    &quot;accountId&quot;: &quot;6b4ae2f3-1044-470c-ab17-57c0d1e58e61&quot;
+  }
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -57,7 +60,7 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2ij9gdtwbbCrn2nwsv4w6wZRHMt" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -73,30 +76,36 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 9.0.90.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.91.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Unnamed.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/bunko/IdeaProjects/SpringWebProject&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nazar/IdeaProjects/SpringWebProject&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nazar\IdeaProjects\SpringWebProject\src\main\resources\static\people" />
-      <recent name="C:\Users\nazar\IdeaProjects\SpringWebProject\src\main\java\spring\web\project\images" />
-      <recent name="C:\Users\nazar\IdeaProjects\SpringWebProject\src\main\webapp\WEB-INF\views\people" />
-      <recent name="C:\Users\nazar\IdeaProjects\SpringWebProject\src\main\webapp\WEB-INF\views\images" />
-      <recent name="C:\Users\nazar\IdeaProjects\SpringWebProject\src\main\resources\static" />
+      <recent name="C:\Users\bunko\IdeaProjects\SpringWebProject\src\main\java\spring\web\project\models" />
+      <recent name="C:\Users\bunko\IdeaProjects\SpringWebProject" />
+      <recent name="C:\Users\bunko\IdeaProjects\SpringWebProject\src\main\webapp\WEB-INF\views\people" />
+      <recent name="C:\Users\bunko\IdeaProjects\SpringWebProject\src\main\webapp" />
+      <recent name="C:\Users\bunko\IdeaProjects\SpringWebProject\photos" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -107,35 +116,25 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.90" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.90" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.91" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.91" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="spring-web-project:war exploded">
+        <artifact name="spring-forms-validation:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="6723e7b5-fe15-4156-9f1d-ae6d2d6e401e" />
+        <option name="BASE_DIRECTORY_NAME" value="975d48ca-7284-4780-a3f8-7f46f5553daa" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
-      <extension name="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-        </ENTRIES>
-      </extension>
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56065" />
+        <option name="DEBUG_PORT" value="53396" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -200,7 +199,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="spring-web-project:war exploded" />
+          <artifact name="spring-forms-validation:war exploded" />
         </option>
       </method>
     </configuration>
@@ -208,8 +207,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-18.0.2-corretto-18.0.2-4caba194b151-5720f15e" />
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -225,7 +224,14 @@
       <workItem from="1720093556376" duration="2149000" />
       <workItem from="1720267067727" duration="11297000" />
       <workItem from="1720346801483" duration="2712000" />
-      <workItem from="1720620451165" duration="2907000" />
+      <workItem from="1721736194834" duration="51000" />
+      <workItem from="1721736250279" duration="275000" />
+      <workItem from="1721736534255" duration="289000" />
+      <workItem from="1721737325026" duration="438000" />
+      <workItem from="1721737788233" duration="239000" />
+      <workItem from="1721813937318" duration="3255000" />
+      <workItem from="1721829109121" duration="4385000" />
+      <workItem from="1721915336339" duration="1973000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <option name="closed" value="true" />
@@ -267,23 +273,39 @@
       <option name="project" value="LOCAL" />
       <updated>1720301955605</updated>
     </task>
-    <task id="LOCAL-00006" summary="+delete-photo-edit">
+    <task id="LOCAL-00006" summary="+email">
       <option name="closed" value="true" />
-      <created>1720465408503</created>
+      <created>1721831058437</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1720465408503</updated>
+      <updated>1721831058437</updated>
     </task>
-    <task id="LOCAL-00007" summary="+edit-noPhoto">
+    <task id="LOCAL-00007" summary="+database">
       <option name="closed" value="true" />
-      <created>1720512671897</created>
+      <created>1721831101353</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1720512671897</updated>
+      <updated>1721831101353</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="+database">
+      <option name="closed" value="true" />
+      <created>1721831178423</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1721831178423</updated>
+    </task>
+    <task id="LOCAL-00009" summary="+database">
+      <option name="closed" value="true" />
+      <created>1721831477552</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1721831477552</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,8 +318,8 @@
     <MESSAGE value="noPhoto" />
     <MESSAGE value="noPhoto&amp;newMainList" />
     <MESSAGE value="+moving&#10;-noPhoto&#10;-noDelete" />
-    <MESSAGE value="+delete-photo-edit" />
-    <MESSAGE value="+edit-noPhoto" />
-    <option name="LAST_COMMIT_MESSAGE" value="+edit-noPhoto" />
+    <MESSAGE value="+email" />
+    <MESSAGE value="+database" />
+    <option name="LAST_COMMIT_MESSAGE" value="+database" />
   </component>
 </project>
