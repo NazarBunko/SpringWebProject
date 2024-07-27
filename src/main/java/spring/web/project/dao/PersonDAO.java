@@ -1,6 +1,7 @@
 package spring.web.project.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import spring.web.project.models.Person;
@@ -20,7 +21,7 @@ public class PersonDAO {
     public PersonDAO() {}
 
     public List<Person> index() {
-        return jdbcTemplate.query("SELECT * FROM person", new PersonMapper());
+        return jdbcTemplate.query("SELECT * FROM person", new BeanPropertyRowMapper<>(Person.class));
     }
 
     public void add(Person person) {
@@ -43,7 +44,7 @@ public class PersonDAO {
 
 
     public Person show(int id) {
-        return jdbcTemplate.queryForObject("select * from person where id = ?", new PersonMapper(), id);
+        return jdbcTemplate.queryForObject("select * from person where id = ?", new BeanPropertyRowMapper<>(Person.class), id);
     }
 
     public void delete(int id) {
