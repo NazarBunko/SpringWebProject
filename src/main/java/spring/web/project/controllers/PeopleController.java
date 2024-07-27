@@ -8,7 +8,6 @@ import spring.web.project.dao.PersonDAO;
 import spring.web.project.models.Person;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 
 @Controller
 @PropertySource("classpath:properties.properties")
@@ -19,10 +18,10 @@ public class PeopleController {
 
     @GetMapping("/person")
     public String one(@RequestParam("id") int id, Model model){
-        if(dao.one(id) == null){
+        if(dao.show(id) == null){
             return "redirect:/people";
         }
-        model.addAttribute("person", dao.one(id));
+        model.addAttribute("person", dao.show(id));
         return "people/one";
     }
 
@@ -39,7 +38,7 @@ public class PeopleController {
 
     @GetMapping("/{id}/edit")
     public String editPerson(@PathVariable("id") int id, Model model) {
-        model.addAttribute("person", dao.one(id));
+        model.addAttribute("person", dao.show(id));
         return "people/edit";
     }
 
@@ -49,11 +48,11 @@ public class PeopleController {
 
         if (!dao.checkEmail(email, id)) {
             model.addAttribute("error", true);
-            model.addAttribute("person", dao.one(id));
+            model.addAttribute("person", dao.show(id));
             return "/people/one";
         } else {
             dao.update(id, new Person(id, request.getParameter("name"), request.getParameter("surname"), email, null));
-            model.addAttribute("person", dao.one(id));
+            model.addAttribute("person", dao.show(id));
             return "/people/one";
         }
     }
