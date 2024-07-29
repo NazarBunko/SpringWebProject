@@ -9,14 +9,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9705f122-f9be-4274-9cf4-ddeec39e77cf" name="Changes" comment="+fullEmailCheck">
+    <list default="true" id="9705f122-f9be-4274-9cf4-ddeec39e77cf" name="Changes" comment="+fullCourse">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/738ec3c1-4200-4af1-83ed-7798e4d8fe62.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/738ec3c1-4200-4af1-83ed-7798e4d8fe62.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/738ec3c1-4200-4af1-83ed-7798e4d8fe62/storage_v2/_src_/database/people.jzLixA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/738ec3c1-4200-4af1-83ed-7798e4d8fe62/storage_v2/_src_/database/people.jzLixA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/controllers/PeopleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/dao/PersonMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/web/project/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/web/project/models/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/controllers/PeopleController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/dao/PersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/dao/PersonDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/dao/PersonMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/web/project/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/web/project/models/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/spring/web/project/models/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/people/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -236,7 +250,9 @@
       <workItem from="1722063557909" duration="2360000" />
       <workItem from="1722066637673" duration="3473000" />
       <workItem from="1722094224303" duration="1649000" />
-      <workItem from="1722103373810" duration="329000" />
+      <workItem from="1722103373810" duration="428000" />
+      <workItem from="1722238954244" duration="16000" />
+      <workItem from="1722253510761" duration="3501000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <option name="closed" value="true" />
@@ -318,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721917374554</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="+fullCourse">
+      <option name="closed" value="true" />
+      <created>1722103758211</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1722103758211</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +358,7 @@
     <MESSAGE value="+email" />
     <MESSAGE value="+database" />
     <MESSAGE value="+fullEmailCheck" />
-    <option name="LAST_COMMIT_MESSAGE" value="+fullEmailCheck" />
+    <MESSAGE value="+fullCourse" />
+    <option name="LAST_COMMIT_MESSAGE" value="+fullCourse" />
   </component>
 </project>

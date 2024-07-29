@@ -9,13 +9,15 @@ public class Person {
     private String name;
     private String surname;
     private String email;
+    private String password;
     private String photo;
 
-    public Person(int id, String name, String surname, String email, String photo) {
+    public Person(int id, String name, String surname, String email, String password, String photo) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
+        this.password = password;
         this.photo = photo;
     }
 
@@ -62,7 +64,7 @@ public class Person {
     }
 
     public Person getPerson(){
-        return new Person(id, name, surname, email, photo);
+        return new Person(id, name, surname, email, password, photo);
     }
 
     public static String decodeHtmlEntities(String input) {
@@ -79,5 +81,13 @@ public class Person {
         matcher.appendTail(decodedString);
 
         return decodedString.toString();
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

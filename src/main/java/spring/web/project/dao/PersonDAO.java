@@ -33,11 +33,12 @@ public class PersonDAO {
         person.setId(newId);
 
         // Виконуємо вставку нової персони в таблицю person
-        jdbcTemplate.update("INSERT INTO person (id, name, surname, email, photo) VALUES (?, ?, ?, ?, ?)",
+        jdbcTemplate.update("INSERT INTO person (id, name, surname, email, password, photo) VALUES (?, ?, ?, ?, ?, ?)",
                 person.getId(),
                 person.getName(),
                 person.getSurname(),
                 person.getEmail(),
+                person.getPassword(),
                 person.getPhoto()
         );
     }
@@ -52,8 +53,8 @@ public class PersonDAO {
     }
 
     public void update(int id, Person updatedPerson) {
-        jdbcTemplate.update("UPDATE person SET name = ?, surname = ?, email = ?, photo = ? WHERE id = ?", updatedPerson.getName(),
-                updatedPerson.getSurname(), updatedPerson.getEmail(), updatedPerson.getPhoto(), id);
+        jdbcTemplate.update("UPDATE person SET name = ?, surname = ?, email = ?, password = ?, photo = ? WHERE id = ?", updatedPerson.getName(),
+                updatedPerson.getSurname(), updatedPerson.getEmail(), updatedPerson.getPassword(), updatedPerson.getPhoto(), id);
     }
 
     public Boolean checkEmail(String email, int id) {
@@ -66,6 +67,18 @@ public class PersonDAO {
         );
 
         return count == 0;
+    }
+
+    public Boolean checkLogin(String email, String password) {
+        // Виконуємо запит для підрахунку рядків з вказаним email і паролем
+        int count = jdbcTemplate.queryForObject(
+                "SELECT COUNT(*) FROM person WHERE email = ? AND password = ?",
+                Integer.class,
+                email,
+                password
+        );
+
+        return count > 0;
     }
 
 }

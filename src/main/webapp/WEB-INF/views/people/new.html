@@ -16,6 +16,22 @@
             position: relative; /* Added for positioning the error message */
         }
 
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            font-size: 24px;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-button::before {
+            content: '<';
+            margin-right: 10px;
+        }
+
         .form-container {
             background-color: #fff;
             padding: 30px;
@@ -34,6 +50,7 @@
 
         .form-container input[type="text"],
         .form-container input[type="email"],
+        .form-container input[type="password"],
         .form-container input[type="file"] {
             width: 100%;
             padding: 10px;
@@ -59,22 +76,6 @@
 
         .form-container input[type="submit"]:hover {
             background-color: #0056b3;
-        }
-
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            text-decoration: none;
-            font-size: 24px;
-            color: #333;
-            display: flex;
-            align-items: center;
-        }
-
-        .back-button::before {
-            content: '<';
-            margin-right: 10px;
         }
 
         .error-message {
@@ -109,6 +110,9 @@
 
         <label for="email">Email</label>
         <input name="email" type="email" id="email" required>
+
+        <label for="password">Password</label>
+        <input name="password" type="password" id="password" required>
 
         <input type="submit" value="Add Person">
     </form>

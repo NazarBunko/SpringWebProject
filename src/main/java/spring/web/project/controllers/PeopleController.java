@@ -51,7 +51,7 @@ public class PeopleController {
             model.addAttribute("person", dao.show(id));
             return "/people/one";
         } else {
-            dao.update(id, new Person(id, request.getParameter("name"), request.getParameter("surname"), email, null));
+            dao.update(id, new Person(id, request.getParameter("name"), request.getParameter("surname"), email, request.getParameter("password"), null));
             model.addAttribute("person", dao.show(id));
             return "/people/one";
         }
@@ -73,11 +73,19 @@ public class PeopleController {
             model.addAttribute("error", true);
             return "/people/new";
         } else {
-            Person person = new Person(0, request.getParameter("name"), request.getParameter("surname"), email, null);
+            Person person = new Person(0, request.getParameter("name"), request.getParameter("surname"), email, request.getParameter("password"), null);
             person.setPhoto("http://surl.li/tzttyg");
             dao.add(person);
             return "redirect:/people";
         }
     }
 
+    @PostMapping("/login")
+    public String login(HttpServletRequest request) {
+        if (dao.checkLogin(request.getParameter("email"), request.getParameter("password"))) {
+            return "redirect:/people";
+        } else {
+            return null;
+        }
+    }
 }
