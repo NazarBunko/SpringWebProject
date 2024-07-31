@@ -1,6 +1,7 @@
 package spring.web.project.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -24,7 +25,7 @@ public class PersonDAO {
         return jdbcTemplate.query("SELECT * FROM person", new BeanPropertyRowMapper<>(Person.class));
     }
 
-    public void add(Person person) {
+    public int add(Person person) {
         // Отримуємо максимальне значення id з таблиці person
         Integer maxId = jdbcTemplate.queryForObject("SELECT COALESCE(MAX(id), 0) FROM person", Integer.class);
 
@@ -41,6 +42,8 @@ public class PersonDAO {
                 person.getPassword(),
                 person.getPhoto()
         );
+
+        return person.getId();
     }
 
 
@@ -69,16 +72,15 @@ public class PersonDAO {
         return count == 0;
     }
 
-    public Boolean checkLogin(String email, String password) {
-        // Виконуємо запит для підрахунку рядків з вказаним email і паролем
-        int count = jdbcTemplate.queryForObject(
-                "SELECT COUNT(*) FROM person WHERE email = ? AND password = ?",
-                Integer.class,
-                email,
-                password
-        );
-
-        return count > 0;
+    public Person checkLogin(String email, String password) {
+        try {
+            return jdbcTemplate.queryForObject(
+                    "SELECT * FROM person WHERE email = ? AND password = ?",
+                    new BeanPropertyRowMapper<>(Person.class),
+                    email, password
+            );
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
     }
-
 }

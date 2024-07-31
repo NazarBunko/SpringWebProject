@@ -121,7 +121,7 @@
 </div>
 
 <body>
-<a href="/people" class="back-button"></a>
+<a th:href="@{/people/{id}(id=${id})}" class="back-button"></a>
 <div class="passport-container">
     <div class="passport-photo">
         <img th:src="${person.getPhoto()}" alt="Passport Photo" style="width: 150px; height: 150px">

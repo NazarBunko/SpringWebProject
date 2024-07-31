@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/people")
 public class PeopleController {
 
+    private static int id;
+
     private final PersonDAO dao = new PersonDAO();
 
     @GetMapping("/person")
@@ -21,13 +23,15 @@ public class PeopleController {
         if(dao.show(id) == null){
             return "redirect:/people";
         }
+        model.addAttribute("id", this.id);
         model.addAttribute("person", dao.show(id));
         return "people/one";
     }
 
-    @GetMapping("")
-    public String index(Model model){
+    @GetMapping("/{id}")
+    public String index(Model model, @PathVariable("id") int id){
         model.addAttribute("people", dao.index());
+        model.addAttribute("person", dao.show(id));
         return "/people/index";
     }
 
@@ -65,7 +69,7 @@ public class PeopleController {
         return "redirect:/people";
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     public String newPerson(Model model, HttpServletRequest request) {
         String email = request.getParameter("email");
 
@@ -75,17 +79,20 @@ public class PeopleController {
         } else {
             Person person = new Person(0, request.getParameter("name"), request.getParameter("surname"), email, request.getParameter("password"), null);
             person.setPhoto("http://surl.li/tzttyg");
-            dao.add(person);
-            return "redirect:/people";
+            int id = dao.add(person);
+            return "redirect:/people/" + id;
         }
     }
 
     @PostMapping("/login")
     public String login(HttpServletRequest request) {
-        if (dao.checkLogin(request.getParameter("email"), request.getParameter("password"))) {
-            return "redirect:/people";
-        } else {
-            return null;
+        Person person = dao.checkLogin(request.getParameter("email"), request.getParameter("password"));
+        System.out.println(person);
+        if (person != null) {
+            System.out.println("Login successful");
+            id = person.getId();
+            return "redirect:/people/" + person.getId();
         }
+        return "/people/login";
     }
 }

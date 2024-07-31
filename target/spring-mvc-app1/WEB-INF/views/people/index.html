@@ -5,22 +5,89 @@
     <title>Users</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
             background-color: #eceff1;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .top-bar {
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             position: relative;
+        }
+
+        .profile-area {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 10px;
+        }
+
+        .profile-name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .profile-surname {
+            font-size: 14px;
+        }
+
+        .profile-photo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .profile-area:hover .profile-menu, .profile-menu:hover {
+            display: block;
+        }
+
+        .profile-menu {
+            display: none;
+            position: absolute;
+            top: 80px;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .profile-menu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .profile-menu a:hover {
+            background-color: #f1f1f1;
         }
 
         .scrollable-container {
             max-height: 90vh;
             overflow-y: auto;
-            width: 100%;
             display: flex;
             justify-content: center;
+            padding: 20px;
         }
 
         .list-wrapper {
@@ -65,24 +132,6 @@
             font-size: 16px;
             color: #333;
         }
-
-        .add-button {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: #007bff;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 28px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-50%);
-        }
     </style>
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -91,7 +140,22 @@
 </head>
 <body>
 
-<!--<a href="/people/new" class="add-button">+</a>-->
+<div class="top-bar">
+    <div>My Application</div>
+    <div class="profile-area">
+        <div class="profile-details">
+            <div class="profile-name" th:text="${person.decodeHtmlEntities(person.getName())}">John</div>
+            <div class="profile-surname" th:text="${person.decodeHtmlEntities(person.getSurname())}">Doe</div>
+        </div>
+        <div class="profile-photo" th:style="'background-image: url(' + ${person.getPhoto()} + ')'">
+            <div class="profile-menu">
+                <a th:href="@{/people/person/(id=${person.getId()})}">Profile</a>
+                <a th:href="@{/people/edit/{id} (id=${person.getId()})}">Settings</a>
+                <a href="redirect:/people/login">Exit</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="scrollable-container">
     <div class="list-wrapper" id="sortable-list">
@@ -101,7 +165,6 @@
                 <p><strong>Name:</strong> <span th:text="${person.decodeHtmlEntities(person.getName())}">John Doe</span></p>
                 <p><strong>Surname:</strong> <span th:text="${person.decodeHtmlEntities(person.getSurname())}">Doe</span></p>
                 <p><strong>Email:</strong> <span th:text="${person.decodeHtmlEntities(person.getEmail())}">john.doe@example.com</span></p>
-                <!-- Add more details as needed -->
                 <a th:href="@{/people/person(id=${person.getId()})}">Details</a>
             </div>
         </div>
