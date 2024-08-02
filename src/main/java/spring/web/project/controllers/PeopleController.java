@@ -8,6 +8,8 @@ import spring.web.project.dao.PersonDAO;
 import spring.web.project.models.Person;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 
 @Controller
 @PropertySource("classpath:properties.properties")
@@ -30,6 +32,7 @@ public class PeopleController {
 
     @GetMapping("/{id}")
     public String index(Model model, @PathVariable("id") int id){
+        System.out.println(dao.show(id).getName() + "3");
         model.addAttribute("people", dao.index());
         model.addAttribute("person", dao.show(id));
         return "/people/index";
@@ -47,7 +50,7 @@ public class PeopleController {
     }
 
     @PatchMapping("/{id}/edit")
-    public String updatePerson(@PathVariable("id") int id, Model model, HttpServletRequest request) {
+    public String updatePerson(@PathVariable("id") int id, Model model, HttpServletRequest request) throws UnsupportedEncodingException {
         String email = request.getParameter("email");
 
         if (!dao.checkEmail(email, id)) {
@@ -72,9 +75,9 @@ public class PeopleController {
     }
 
     @PostMapping("/add")
-    public String newPerson(Model model, HttpServletRequest request) {
+    public String newPerson(Model model, HttpServletRequest request) throws UnsupportedEncodingException {
         String email = request.getParameter("email");
-
+        System.out.println(request.getParameter("name") + "1");
         if (!dao.checkEmail(email, 0)) {
             model.addAttribute("error", true);
             return "/people/new";
@@ -88,13 +91,14 @@ public class PeopleController {
     }
 
     @PostMapping("/login")
-    public String login(HttpServletRequest request) {
+    public String login(HttpServletRequest request, Model model) {
         Person person = dao.checkLogin(request.getParameter("email"), request.getParameter("password"));
         if (person != null) {
             System.out.println("Login successful");
             id = person.getId();
             return "redirect:/people/" + this.id;
         }
+        model.addAttribute("error", true);
         return "/people/login";
     }
 

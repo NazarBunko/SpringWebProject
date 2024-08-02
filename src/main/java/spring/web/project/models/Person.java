@@ -1,6 +1,8 @@
 package spring.web.project.models;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,13 +14,17 @@ public class Person {
     private String password;
     private String photo;
 
-    public Person(int id, String name, String surname, String email, String password, String photo) {
+    public Person(int id, String name, String surname, String email, String password, String photo) throws UnsupportedEncodingException {
+        this.name = convertText(name);
+        this.surname = convertText(surname);
+        this.email = convertText(email);
+        this.password = convertText(password);
         this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.password = password;
         this.photo = photo;
+    }
+
+    private String convertText(String text) throws UnsupportedEncodingException {
+        return new String(text.getBytes("ISO-8859-1"), Charset.forName("UTF-8"));
     }
 
     public Person() {}

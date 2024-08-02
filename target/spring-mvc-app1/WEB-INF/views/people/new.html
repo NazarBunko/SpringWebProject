@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New User</title>
     <style>
@@ -96,7 +96,7 @@
 <body>
 
 <div class="error-message" th:if="${error}">
-    <p>Email already exists!</p>
+    <p>Такий email вже зареєстровано!</p>
 </div>
 
 <a th:href="@{/people/login}" class="back-button"></a>
