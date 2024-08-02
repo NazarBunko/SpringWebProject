@@ -21,7 +21,7 @@ public class PeopleController {
     @GetMapping("/person")
     public String one(@RequestParam("id") int id, Model model){
         if(dao.show(id) == null){
-            return "redirect:/people";
+            return "redirect:/people/" + this.id;
         }
         model.addAttribute("id", this.id);
         model.addAttribute("person", dao.show(id));
@@ -61,12 +61,14 @@ public class PeopleController {
         }
     }
 
-
     @GetMapping("/{id}/delete")
     public String delete(@PathVariable("id") int id, Model model){
         dao.delete(id);
+        if(id == this.id){
+            return "redirect:/people/login";
+        }
         model.addAttribute("people", dao.index());
-        return "redirect:/people";
+        return "redirect:/people/" + this.id;
     }
 
     @PostMapping("/add")
@@ -80,6 +82,7 @@ public class PeopleController {
             Person person = new Person(0, request.getParameter("name"), request.getParameter("surname"), email, request.getParameter("password"), null);
             person.setPhoto("http://surl.li/tzttyg");
             int id = dao.add(person);
+            this.id = id;
             return "redirect:/people/" + id;
         }
     }
@@ -87,12 +90,16 @@ public class PeopleController {
     @PostMapping("/login")
     public String login(HttpServletRequest request) {
         Person person = dao.checkLogin(request.getParameter("email"), request.getParameter("password"));
-        System.out.println(person);
         if (person != null) {
             System.out.println("Login successful");
             id = person.getId();
-            return "redirect:/people/" + person.getId();
+            return "redirect:/people/" + this.id;
         }
+        return "/people/login";
+    }
+
+    @GetMapping("/login")
+    public String showLoginPage() {
         return "/people/login";
     }
 }

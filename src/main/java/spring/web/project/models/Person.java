@@ -63,26 +63,6 @@ public class Person {
         this.photo = photo;
     }
 
-    public Person getPerson(){
-        return new Person(id, name, surname, email, password, photo);
-    }
-
-    public static String decodeHtmlEntities(String input) {
-        Pattern pattern = Pattern.compile("&#(\\d+);");
-        Matcher matcher = pattern.matcher(input);
-        StringBuffer decodedString = new StringBuffer();
-
-        while (matcher.find()) {
-            String charCode = matcher.group(1);
-            int codePoint = Integer.parseInt(charCode);
-            String character = new String(Character.toChars(codePoint));
-            matcher.appendReplacement(decodedString, character);
-        }
-        matcher.appendTail(decodedString);
-
-        return decodedString.toString();
-    }
-
     public String getPassword() {
         return password;
     }

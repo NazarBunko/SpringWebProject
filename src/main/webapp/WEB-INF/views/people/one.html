@@ -129,9 +129,9 @@
 
     <div class="passport-info">
         <p><span>ID:</span> <span th:text="${person.getId()}">123456</span></p>
-        <p><span>Name:</span> <span th:text="${person.decodeHtmlEntities(person.getName())}">John</span></p>
-        <p><span>Surname:</span> <span th:text="${person.decodeHtmlEntities(person.getSurname())}">Doe</span></p>
-        <p><span>Email:</span> <span th:text="${person.decodeHtmlEntities(person.getEmail())}">john.doe@example.com</span></p>
+        <p><span>Name:</span> <span th:text="${person.getName()}">John</span></p>
+        <p><span>Surname:</span> <span th:text="${person.getSurname()}">Doe</span></p>
+        <p><span>Email:</span> <span th:text="${person.getEmail()}">john.doe@example.com</span></p>
     </div>
 
     <div class="action-buttons">

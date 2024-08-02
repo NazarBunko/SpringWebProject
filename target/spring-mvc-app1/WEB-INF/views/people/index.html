@@ -18,13 +18,13 @@
             align-items: center;
             padding: 10px 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
         }
 
         .profile-area {
             display: flex;
             align-items: center;
             position: relative;
+            cursor: pointer;
         }
 
         .profile-details {
@@ -50,36 +50,65 @@
             background-color: #ddd;
             background-size: cover;
             background-position: center;
-            position: relative;
-            cursor: pointer;
         }
 
-        .profile-area:hover .profile-menu, .profile-menu:hover {
-            display: block;
-        }
-
-        .profile-menu {
-            display: none;
-            position: absolute;
-            top: 80px;
-            right: 0;
-            background-color: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            overflow: hidden;
+        .side-menu {
+            width: 300px;
+            height: 100%;
+            background-color: #1c1c1c;
+            color: white;
+            position: fixed;
+            top: 0;
+            right: -300px;
+            transition: 0.3s;
+            padding-top: 20px;
             z-index: 1000;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
         }
 
-        .profile-menu a {
-            display: block;
+        .side-menu .profile-section {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .side-menu .profile-photo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 10px;
+        }
+
+        .side-menu .profile-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .side-menu .profile-surname {
+            font-size: 14px;
+        }
+
+        .side-menu a {
             padding: 10px 20px;
             text-decoration: none;
-            color: #333;
-            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
         }
 
-        .profile-menu a:hover {
-            background-color: #f1f1f1;
+        .side-menu a:hover {
+            background-color: #575757;
+        }
+
+        .side-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+        }
+
+        .open-menu {
+            right: 0;
         }
 
         .scrollable-container {
@@ -142,19 +171,24 @@
 
 <div class="top-bar">
     <div>My Application</div>
-    <div class="profile-area">
+    <div class="profile-area" onclick="toggleMenu()">
         <div class="profile-details">
-            <div class="profile-name" th:text="${person.decodeHtmlEntities(person.getName())}">John</div>
-            <div class="profile-surname" th:text="${person.decodeHtmlEntities(person.getSurname())}">Doe</div>
+            <div class="profile-name" th:text="${person.getName()}">John</div>
+            <div class="profile-surname" th:text="${person.getSurname()}">Doe</div>
         </div>
-        <div class="profile-photo" th:style="'background-image: url(' + ${person.getPhoto()} + ')'">
-            <div class="profile-menu">
-                <a th:href="@{/people/person/(id=${person.getId()})}">Profile</a>
-                <a th:href="@{/people/edit/{id} (id=${person.getId()})}">Settings</a>
-                <a href="redirect:/people/login">Exit</a>
-            </div>
-        </div>
+        <div class="profile-photo" th:style="'background-image: url(' + ${person.getPhoto()} + ')'"></div>
     </div>
+</div>
+
+<div id="mySidenav" class="side-menu">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <div class="profile-section">
+        <div class="profile-photo" th:style="'background-image: url(' + ${person.getPhoto()} + ')'"></div>
+        <div class="profile-name" th:text="${person.getName()}">John</div>
+        <div class="profile-surname" th:text="${person.getSurname()}">Doe</div>
+    </div>
+    <a th:href="@{/people/person/(id=${person.getId()})}">Profile</a>
+    <a href="/people/login">Exit</a>
 </div>
 
 <div class="scrollable-container">
@@ -162,9 +196,9 @@
         <div th:each="person : ${people}" class="person-container">
             <div class="person-photo" th:style="'background-image: url(' + ${person.getPhoto()} + ')'"></div>
             <div class="person-details">
-                <p><strong>Name:</strong> <span th:text="${person.decodeHtmlEntities(person.getName())}">John Doe</span></p>
-                <p><strong>Surname:</strong> <span th:text="${person.decodeHtmlEntities(person.getSurname())}">Doe</span></p>
-                <p><strong>Email:</strong> <span th:text="${person.decodeHtmlEntities(person.getEmail())}">john.doe@example.com</span></p>
+                <p><strong>Name:</strong> <span th:text="${person.getName()}">John Doe</span></p>
+                <p><strong>Surname:</strong> <span th:text="${person.getSurname()}">Doe</span></p>
+                <p><strong>Email:</strong> <span th:text="${person.getEmail()}">john.doe@example.com</span></p>
                 <a th:href="@{/people/person(id=${person.getId()})}">Details</a>
             </div>
         </div>
@@ -179,6 +213,15 @@
             ghostClass: 'sortable-ghost'
         });
     });
+
+    function toggleMenu() {
+        var menu = document.getElementById("mySidenav");
+        if (menu.classList.contains("open-menu")) {
+            menu.classList.remove("open-menu");
+        } else {
+            menu.classList.add("open-menu");
+        }
+    }
 </script>
 
 </body>
