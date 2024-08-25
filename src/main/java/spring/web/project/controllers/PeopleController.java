@@ -7,10 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import spring.web.project.dao.PersonDAO;
 import spring.web.project.models.Person;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-
 @Controller
 @PropertySource("classpath:properties.properties")
 @RequestMapping("/people")
@@ -21,53 +17,57 @@ public class PeopleController {
     private final PersonDAO dao = new PersonDAO();
 
     @GetMapping("/person")
-    public String one(@RequestParam("id") int id, Model model){
-        if(dao.show(id) == null){
+    public String one(@RequestParam("id") int id, Model model) {
+        Person person = dao.show(id);
+        if (person == null) {
             return "redirect:/people/" + this.id;
         }
         model.addAttribute("id", this.id);
-        model.addAttribute("person", dao.show(id));
-        return "people/one";
+        model.addAttribute("person", person);
+        return "/people/one";
     }
 
     @GetMapping("/{id}")
-    public String index(Model model, @PathVariable("id") int id){
-        System.out.println(dao.show(id).getName() + "3");
+    public String index(Model model, @PathVariable("id") int id) {
         model.addAttribute("people", dao.index());
         model.addAttribute("person", dao.show(id));
         return "/people/index";
     }
 
     @GetMapping("/new")
-    public String add(){
-        return "people/new";
+    public String add() {
+        return "/people/new";
     }
 
     @GetMapping("/{id}/edit")
     public String editPerson(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", dao.show(id));
-        return "people/edit";
+        return "/people/edit";
     }
 
-    @PatchMapping("/{id}/edit")
-    public String updatePerson(@PathVariable("id") int id, Model model, HttpServletRequest request) throws UnsupportedEncodingException {
-        String email = request.getParameter("email");
-
+    @PostMapping("/{id}/edited")
+    public String updatePerson(@PathVariable("id") int id,
+                               @RequestParam("name") String name,
+                               @RequestParam("surname") String surname,
+                               @RequestParam("email") String email,
+                               @RequestParam("password") String password,
+                               Model model) {
         if (!dao.checkEmail(email, id)) {
             model.addAttribute("error", true);
             model.addAttribute("person", dao.show(id));
-            return "/people/one";
+            return "people/one";
         } else {
-            dao.update(id, new Person(id, request.getParameter("name"), request.getParameter("surname"), email, request.getParameter("password"), null));
+            dao.update(id, new Person(id, name, surname, email, password, null));
             model.addAttribute("person", dao.show(id));
-            return "/people/one";
+            return "people/one";
         }
     }
 
+
     @GetMapping("/{id}/delete")
-    public String delete(@PathVariable("id") int id, Model model){
+    public String delete(@PathVariable("id") int id, Model model) {
         dao.delete(id);
-        if(id == this.id){
+        if (id == this.id) {
             return "redirect:/people/login";
         }
         model.addAttribute("people", dao.index());
@@ -75,14 +75,16 @@ public class PeopleController {
     }
 
     @PostMapping("/add")
-    public String newPerson(Model model, HttpServletRequest request) throws UnsupportedEncodingException {
-        String email = request.getParameter("email");
-        System.out.println(request.getParameter("name") + "1");
+    public String newPerson(@RequestParam("name") String name,
+                            @RequestParam("surname") String surname,
+                            @RequestParam("email") String email,
+                            @RequestParam("password") String password,
+                            Model model) {
         if (!dao.checkEmail(email, 0)) {
             model.addAttribute("error", true);
             return "/people/new";
         } else {
-            Person person = new Person(0, request.getParameter("name"), request.getParameter("surname"), email, request.getParameter("password"), null);
+            Person person = new Person(0, name, surname, email, password, null);
             person.setPhoto("http://surl.li/tzttyg");
             int id = dao.add(person);
             this.id = id;
@@ -91,10 +93,11 @@ public class PeopleController {
     }
 
     @PostMapping("/login")
-    public String login(HttpServletRequest request, Model model) {
-        Person person = dao.checkLogin(request.getParameter("email"), request.getParameter("password"));
+    public String login(@RequestParam("email") String email,
+                        @RequestParam("password") String password,
+                        Model model) {
+        Person person = dao.checkLogin(email, password);
         if (person != null) {
-            System.out.println("Login successful");
             id = person.getId();
             return "redirect:/people/" + this.id;
         }

@@ -56,12 +56,17 @@ public class PersonDAO {
     }
 
     public void update(int id, Person updatedPerson) {
-        jdbcTemplate.update("UPDATE person SET name = ?, surname = ?, email = ?, password = ?, photo = ? WHERE id = ?", updatedPerson.getName(),
-                updatedPerson.getSurname(), updatedPerson.getEmail(), updatedPerson.getPassword(), updatedPerson.getPhoto(), id);
+        jdbcTemplate.update("UPDATE person SET name = ?, surname = ?, email = ?, password = ?, photo = ? WHERE id = ?",
+                updatedPerson.getName(),
+                updatedPerson.getSurname(),
+                updatedPerson.getEmail(),
+                updatedPerson.getPassword(),
+                updatedPerson.getPhoto(),
+                id
+        );
     }
 
     public Boolean checkEmail(String email, int id) {
-        // Виконуємо запит для підрахунку рядків з вказаним email і відмінним id
         int count = jdbcTemplate.queryForObject(
                 "SELECT COUNT(*) FROM person WHERE email = ? AND id <> ?",
                 Integer.class,

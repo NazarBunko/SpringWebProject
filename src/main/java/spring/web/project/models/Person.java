@@ -14,7 +14,7 @@ public class Person {
     private String password;
     private String photo;
 
-    public Person(int id, String name, String surname, String email, String password, String photo) throws UnsupportedEncodingException {
+    /*public Person(int id, String name, String surname, String email, String password, String photo) throws UnsupportedEncodingException {
         this.name = convertText(name);
         this.surname = convertText(surname);
         this.email = convertText(email);
@@ -25,6 +25,15 @@ public class Person {
 
     private String convertText(String text) throws UnsupportedEncodingException {
         return new String(text.getBytes("ISO-8859-1"), Charset.forName("UTF-8"));
+    }*/
+
+    public Person(int id, String name, String surname, String email, String password, String photo) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
+        this.id = id;
+        this.photo = photo;
     }
 
     public Person() {}
