@@ -1,0 +1,74 @@
+<changelist name="Uncommitted_changes_before_Update_at_27_08_2024_11_06_[Changes]" date="1724745979549" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_08_2024_11_06_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 27.08.2024 11:06 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_20_07_2024_17_42_[Changes]/FirstController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_20_07_2024_17_42_[Changes]/MySpringMVCDispatcherServletInitializer.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" />
+    <option name="AFTER_PATH" value="target/spring-mvc-app1/WEB-INF/classes/spring/web/project/controllers/PeopleController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_08_2024_11_06_[Changes]/PeopleController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_20_07_2024_17_42_[Changes]/SpringConfig.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/spring/web/project/dao/PersonDAO.class" />
+    <option name="AFTER_PATH" value="target/classes/spring/web/project/dao/PersonDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_08_2024_11_06_[Changes]/PersonDAO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonDAO.class" />
+    <option name="AFTER_PATH" value="target/spring-mvc-app1/WEB-INF/classes/spring/web/project/dao/PersonDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_08_2024_11_06_[Changes]/PersonDAO1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_20_07_2024_17_42_[Changes]/PeopleController1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_20_07_2024_17_42_[Changes]/PersonDAO.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_20_07_2024_17_42_[Changes]/PeopleController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/spring/web/project/controllers/PeopleController.class" />
+    <option name="AFTER_PATH" value="target/classes/spring/web/project/controllers/PeopleController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_08_2024_11_06_[Changes]/PeopleController1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_20_07_2024_17_42_[Changes]/FirstController1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_20_07_2024_17_42_[Changes]/MySpringMVCDispatcherServletInitializer1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_20_07_2024_17_42_[Changes]/SpringConfig1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_20_07_2024_17_42_[Changes]/PersonDAO1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>
