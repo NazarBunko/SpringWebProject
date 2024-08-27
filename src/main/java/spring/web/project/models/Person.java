@@ -1,6 +1,8 @@
 package spring.web.project.models;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,13 +11,28 @@ public class Person {
     private String name;
     private String surname;
     private String email;
+    private String password;
     private String photo;
 
-    public Person(int id, String name, String surname, String email, String photo) {
+    /*public Person(int id, String name, String surname, String email, String password, String photo) throws UnsupportedEncodingException {
+        this.name = convertText(name);
+        this.surname = convertText(surname);
+        this.email = convertText(email);
+        this.password = convertText(password);
         this.id = id;
+        this.photo = photo;
+    }
+
+    private String convertText(String text) throws UnsupportedEncodingException {
+        return new String(text.getBytes("ISO-8859-1"), Charset.forName("UTF-8"));
+    }*/
+
+    public Person(int id, String name, String surname, String email, String password, String photo) {
         this.name = name;
         this.surname = surname;
         this.email = email;
+        this.password = password;
+        this.id = id;
         this.photo = photo;
     }
 
@@ -61,23 +78,11 @@ public class Person {
         this.photo = photo;
     }
 
-    public Person getPerson(){
-        return new Person(id, name, surname, email, photo);
+    public String getPassword() {
+        return password;
     }
 
-    public static String decodeHtmlEntities(String input) {
-        Pattern pattern = Pattern.compile("&#(\\d+);");
-        Matcher matcher = pattern.matcher(input);
-        StringBuffer decodedString = new StringBuffer();
-
-        while (matcher.find()) {
-            String charCode = matcher.group(1);
-            int codePoint = Integer.parseInt(charCode);
-            String character = new String(Character.toChars(codePoint));
-            matcher.appendReplacement(decodedString, character);
-        }
-        matcher.appendTail(decodedString);
-
-        return decodedString.toString();
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

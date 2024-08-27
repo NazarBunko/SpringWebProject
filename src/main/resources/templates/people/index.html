@@ -187,7 +187,7 @@
         <div class="profile-name" th:text="${person.getName()}">John</div>
         <div class="profile-surname" th:text="${person.getSurname()}">Doe</div>
     </div>
-    <a th:href="@{/people/person/(id=${person.getId()})}">Profile</a>
+    <a th:href="@{/people/person(id=${person.getId()})}">Profile</a>
     <a href="/people/login">Exit</a>
 </div>
 

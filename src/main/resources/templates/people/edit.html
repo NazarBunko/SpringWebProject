@@ -77,7 +77,7 @@
 <body>
 <a th:href="@{/people/person(id=${person.getId()})}" class="back-button"></a>
 <div class="form-container">
-    <form th:method="patch" th:action="@{/people/{id}/edit(id=${person.getId()})}">
+    <form th:method="post" th:action="@{/people/{id}/edited(id=${person.getId()})}">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" th:value="${person.getName()}" required>
 
