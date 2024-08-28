@@ -2,77 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/edit.css">
     <title>Edit User</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #eceff1;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .form-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .form-container form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-container label {
-            margin-bottom: 10px;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .form-container input {
-            margin-bottom: 20px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .form-container button {
-            padding: 10px;
-            font-size: 18px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .form-container button:hover {
-            background-color: #0056b3;
-        }
-
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            text-decoration: none;
-            font-size: 24px;
-            color: #333;
-            display: flex;
-            align-items: center;
-        }
-
-        .back-button::before {
-            content: '<';
-            margin-right: 10px;
-        }
-    </style>
 </head>
 <body>
 <a th:href="@{/people/person(id=${person.getId()})}" class="back-button"></a>
